@@ -12,18 +12,21 @@ import java.util.stream.Stream;
 
 
 public class Main {
-    static Integer NUMBER_OF_COLORS = 3;
+    static Integer NUMBER_OF_COLORS = 8;
     static Integer NUMBER_OF_THREADS = 3;
     public static void main(String[] args) throws InterruptedException {
         Graph<Integer> graph = new Graph<>();
-        graph.createRandomGraph(10, 10);
+        graph.createRandomGraph(1000, 5000);
 
         System.out.println(graph);
-
+        long startTime = System.currentTimeMillis();
         if(GFG.canColor(graph, NUMBER_OF_COLORS, NUMBER_OF_THREADS))
             System.out.println("Can be colored with " + NUMBER_OF_COLORS + " colors");
         else
             System.out.println("Can't be colored with " + NUMBER_OF_COLORS + " colors");
+        long endTime = System.currentTimeMillis();
+        System.out.println("Regular implementation with " + graph.getVertexCount() +" and "+graph.getEdgesCount(true)+
+                " edges: " + (endTime - startTime) + " ms");
     }
 }
 

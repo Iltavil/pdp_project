@@ -8,7 +8,7 @@ import java.util.concurrent.locks.ReentrantLock;
 import java.util.stream.IntStream;
 
 public class MainMPI {
-    static Integer NUMBER_OF_COLORS = 4;
+    static Integer NUMBER_OF_COLORS = 8;
 
     public static void main(String[] args) {
         MPI.Init(args);
@@ -19,7 +19,8 @@ public class MainMPI {
         if(me == 0) {
             Integer retVal = 1;
             Graph<Integer> graph = new Graph<>();
-            graph.createGraph(10);
+            //graph.createGraph(10);
+            graph.createRandomGraph(1000, 5000);
             List<ReentrantLock> mutexes = new ArrayList<>();
 
             System.out.println(graph);
@@ -27,7 +28,7 @@ public class MainMPI {
 
             int start = 0, finnish = 0;
             int len = graph.getVertexCount() / (nrProcs + 1);
-
+            long startTime = System.currentTimeMillis();
             for (int i=1;i<nrProcs;i++)
             {
                 start = finnish;
@@ -62,6 +63,9 @@ public class MainMPI {
                 System.out.println("Can color with " + NUMBER_OF_COLORS + " colors" );
             else
                 System.out.println("Can't color with " + NUMBER_OF_COLORS + " colors");
+            long endTime = System.currentTimeMillis();
+            System.out.println("Mpi implementation with " + graph.getVertexCount() +" and "+graph.getEdgesCount(true)+
+                    " edges: " + (endTime - startTime) + " ms");
         }
         else
         {

@@ -50,7 +50,7 @@ public class Graph<T> implements Serializable {
     }
 
     // This function gives the count of edges
-    public void getEdgesCount(boolean bidirection)
+    public int getEdgesCount(boolean bidirection)
     {
         int count = 0;
         for (T v : map.keySet()) {
@@ -59,9 +59,7 @@ public class Graph<T> implements Serializable {
         if (bidirection) {
             count = count / 2;
         }
-        System.out.println("The graph has "
-                + count
-                + " edges.");
+        return count;
     }
 
     // This function gives whether

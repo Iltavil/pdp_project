@@ -1,0 +1,29 @@
+Algorithms
+-we split the vertexes as equally as we can between the workers
+-then for each vertex we check the neighbours, we see what colors they have and the current vertex takes the first free one
+
+Synchronization
+-for both cases when we work on a vertex we synchronize it and its neighbours, in ascending order and unlock in descending
+ order, so we don't get deadlock
+-moreover, for the regular implementation we use an AtomicInteger for the retVal
+
+Performance
+-10
+Can be colored with 3 colors
+Regular implementation with 10 and 23 edges: 28 ms
+
+Can color with 4 colors
+Mpi implementation with 10 and 23 edges: 44 ms
+
+-100
+Can't be colored with 4 colors
+Regular implementation with 100 and 439 edges: 35 ms
+
+Can't color with 4 colors
+Mpi implementation with 100 and 438 edges: 56 ms
+-1000
+Can't be colored with 8 colors
+Regular implementation with 1000 and 6479 edges: 51 ms
+
+Can't color with 8 colors
+Mpi implementation with 1000 and 6446 edges: 281 ms
