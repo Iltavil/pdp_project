@@ -9,21 +9,43 @@ Synchronization
 
 Performance
 -10
-Can be colored with 3 colors
-Regular implementation with 10 and 23 edges: 28 ms
+    Catalin
+        Can be colored with 3 colors
+        Regular implementation with 10 and 23 edges: 28 ms
 
-Can color with 4 colors
-Mpi implementation with 10 and 23 edges: 44 ms
+        Can color with 4 colors
+        Mpi implementation with 10 and 23 edges: 44 ms
+    Costin
+        Can be colored with 4 colors
+        Regular implementation with 10 and 21 edges: 51 ms
+
+        Can color with 4 colors
+        Mpi implementation with 10 and 22 edges: 85 ms
 
 -100
-Can't be colored with 4 colors
-Regular implementation with 100 and 439 edges: 35 ms
+    Catalin
+        Can't be colored with 4 colors
+        Regular implementation with 100 and 439 edges: 35 ms
 
-Can't color with 4 colors
-Mpi implementation with 100 and 438 edges: 56 ms
+        Can't color with 4 colors
+        Mpi implementation with 100 and 438 edges: 56 ms
+    Costin
+        Can't be colored with 4 colors
+        Regular implementation with 100 and 434 edges: 52 ms
+
+        Can't color with 4 colors
+        Mpi implementation with 100 and 431 edges: 171 ms
+
 -1000
-Can't be colored with 8 colors
-Regular implementation with 1000 and 6479 edges: 51 ms
+    Catalin
+        Can't be colored with 8 colors
+        Regular implementation with 1000 and 6479 edges: 51 ms
 
-Can't color with 8 colors
-Mpi implementation with 1000 and 6446 edges: 281 ms
+        Can't color with 8 colors
+        Mpi implementation with 1000 and 6446 edges: 281 ms
+    Costin
+        Can't be colored with 8 colors
+        Regular implementation with 1000 and 6465 edges: 109 ms
+
+        Can color with 8 colors
+        Mpi implementation with 1000 and 6469 edges: 546 ms

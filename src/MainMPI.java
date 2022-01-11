@@ -8,7 +8,7 @@ import java.util.concurrent.locks.ReentrantLock;
 import java.util.stream.IntStream;
 
 public class MainMPI {
-    static Integer NUMBER_OF_COLORS = 8;
+    static Integer NUMBER_OF_COLORS = 4;
 
     public static void main(String[] args) {
         MPI.Init(args);
@@ -20,7 +20,7 @@ public class MainMPI {
             Integer retVal = 1;
             Graph<Integer> graph = new Graph<>();
             //graph.createGraph(10);
-            graph.createRandomGraph(1000, 5000);
+            graph.createRandomGraph(10, 10);
             List<ReentrantLock> mutexes = new ArrayList<>();
 
             System.out.println(graph);

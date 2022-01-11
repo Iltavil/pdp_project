@@ -12,11 +12,11 @@ import java.util.stream.Stream;
 
 
 public class Main {
-    static Integer NUMBER_OF_COLORS = 8;
+    static Integer NUMBER_OF_COLORS = 4;
     static Integer NUMBER_OF_THREADS = 3;
     public static void main(String[] args) throws InterruptedException {
         Graph<Integer> graph = new Graph<>();
-        graph.createRandomGraph(1000, 5000);
+        graph.createRandomGraph(10, 10);
 
         System.out.println(graph);
         long startTime = System.currentTimeMillis();
